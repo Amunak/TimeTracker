@@ -2,6 +2,9 @@
 
 namespace TimeTracker
 {
+    /// <summary>
+    /// Custom TimeSpan formatting class
+    /// </summary>
     public static class TimeSpanFormatter
     {
         /// <summary>

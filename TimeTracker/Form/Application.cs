@@ -12,6 +12,9 @@ using System.Resources;
 
 namespace TimeTracker.Form
 {
+    /// <summary>
+    /// Main application form class
+    /// </summary>
     public partial class Application : System.Windows.Forms.Form
     {
         /// <summary>
@@ -122,7 +125,7 @@ namespace TimeTracker.Form
                 {"en",  "English" },
                 {"cs",  "Čeština" },
             };
-            
+
             foreach (var item in items)
             {
                 ResourceManager resourceManager = new ResourceManager(typeof(Resources));
