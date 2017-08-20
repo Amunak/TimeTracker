@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("TimeTracker")]
+[assembly: AssemblyTitle("Time Tracker")]
 [assembly:
     AssemblyDescription(
         "Simple time tracking application made for \"Programming for Windows\" course on University of Finance and Administration, department of Informatics and Mathematics."
@@ -41,6 +41,6 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.2.*")]
+[assembly: AssemblyVersion("1.3.*")]
 [assembly: NeutralResourcesLanguage("")]
 
