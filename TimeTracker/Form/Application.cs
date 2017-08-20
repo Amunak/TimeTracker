@@ -129,10 +129,10 @@ namespace TimeTracker.Form
             foreach (var item in items)
             {
                 ResourceManager resourceManager = new ResourceManager(typeof(Resources));
-                string localizedLanguageName = "Application_language_" + item.Key;
+                string localizedLanguageName = resourceManager.GetString("Application_language_" + item.Key);
                 var menuItem = new ToolStripMenuItem
                 {
-                    Text = string.Format("{0} ({1})", resourceManager.GetString(localizedLanguageName), item.Value),
+                    Text = localizedLanguageName == null ? item.Value : string.Format("{0} ({1})", localizedLanguageName, item.Value),
                     Checked = Settings.Default.language == item.Key,
                 };
                 menuItem.Click += (sender, e) => LanguageItemClicked(sender, e, item.Key);
