@@ -156,9 +156,6 @@
   <data name="Application_nonexistentFileMessageBox_Message" xml:space="preserve">
     <value>Could not load specified file because it does not exist.</value>
   </data>
-  <data name="Application_source_link" xml:space="preserve">
-    <value>https://github.com/Amunak/TimeTracker</value>
-  </data>
   <data name="Application_unsavedMessageBox_Caption" xml:space="preserve">
     <value>Save changes</value>
   </data>

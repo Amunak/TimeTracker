@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
-using TimeTracker.Properties;
 
 namespace TimeTracker.Form
 {
@@ -18,7 +17,7 @@ namespace TimeTracker.Form
             this.textBoxDescription.Text = AssemblyDescription;
             this.textBoxLicense.Text = AssemblyLicense;
 
-            this.sourceCodeLink.Text = Resources.Application_source_link;
+            this.sourceCodeLink.Text = AssemblySourceLink.ToString();
             this.sourceCodeLink.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
         }
 
@@ -29,7 +28,7 @@ namespace TimeTracker.Form
         /// <param name="e"></param>
         private void LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo(Resources.Application_source_link);
+            ProcessStartInfo processInfo = new ProcessStartInfo(AssemblySourceLink.ToString());
             Process.Start(processInfo);
         }
 
@@ -114,17 +113,17 @@ namespace TimeTracker.Form
             }
         }
 
-        public string AssemblyCompany
+        public Uri AssemblySourceLink
         {
             get
             {
                 object[] attributes =
-                    Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                    Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblySourceLinkAttribute), false);
                 if (attributes.Length == 0)
                 {
-                    return "";
+                    return null;
                 }
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+                return ((AssemblySourceLinkAttribute)attributes[0]).SourceLink;
             }
         }
 

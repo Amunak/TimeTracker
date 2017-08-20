@@ -178,15 +178,6 @@ namespace TimeTracker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://github.com/Amunak/TimeTracker.
-        /// </summary>
-        internal static string Application_source_link {
-            get {
-                return ResourceManager.GetString("Application_source_link", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save changes.
         /// </summary>
         internal static string Application_unsavedMessageBox_Caption {
