@@ -15,8 +15,15 @@ namespace TimeTracker
         {
             if (Settings.Default.language != "none")
             {
-                CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(Settings.Default.language);
-                CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(Settings.Default.language);
+                try
+                {
+                    CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(Settings.Default.language);
+                    CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(Settings.Default.language);
+                }
+                catch (CultureNotFoundException)
+                {
+                    System.Windows.Forms.MessageBox.Show(string.Format("Error: invalid culture (language) '{0}'", Settings.Default.language), "Critical error!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Stop);
+                }
             }
 
             System.Windows.Forms.Application.EnableVisualStyles();
