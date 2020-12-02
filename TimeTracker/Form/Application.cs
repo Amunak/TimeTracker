@@ -544,8 +544,18 @@ namespace TimeTracker.Form
             var items = this.categoryToolStripComboBox.Items;
             items.Clear();
             items.AddRange(GetUsedCategories().ToArray());
+            //Calculates Total Hours and Total Minutes
+            CalculateTotal();
         }
-
+        /// <summary>
+        /// Calculates Total Hours and Total Minutes according to the category picker with newly-collected categories
+        /// </summary>
+        private void CalculateTotal()
+        {
+            decimal min = Data.Sum(a => (a.EndTime - a.StartTime).Seconds / 60M);
+            txt_TotalMinutes.Text = min.ToString("F3");
+            txt_TotalHours.Text = (min / 60M).ToString("F3");
+        }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveIfNecessary();
@@ -558,6 +568,8 @@ namespace TimeTracker.Form
             RefreshFileButtons();
             RefreshEditButtons();
             RefreshTitle();
+            //Clears Total Hours and Total Minutes
+            CalculateTotal();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
