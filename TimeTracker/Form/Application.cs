@@ -552,7 +552,7 @@ namespace TimeTracker.Form
         /// </summary>
         private void CalculateTotal()
         {
-            decimal min = Data.Sum(a => (a.EndTime - a.StartTime).Seconds / 60M);
+            var min = ((decimal)Data.Sum(a => (a.EndTime - a.StartTime).TotalSeconds))/60M;
             txt_TotalMinutes.Text = min.ToString("F3");
             txt_TotalHours.Text = (min / 60M).ToString("F3");
         }
