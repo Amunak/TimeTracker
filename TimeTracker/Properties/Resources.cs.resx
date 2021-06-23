@@ -156,6 +156,15 @@
   <data name="Application_nonexistentFileMessageBox_Message" xml:space="preserve">
     <value>Vybraný soubor se nepodařilo načíst protože neexistuje.</value>
   </data>
+  <data name="Application_statsCategory_Text" xml:space="preserve">
+    <value>Kategorie "{0}": {1}</value>
+  </data>
+  <data name="Application_statsSelected_Text" xml:space="preserve">
+    <value>Výběr ({0}): {1}</value>
+  </data>
+  <data name="Application_statsTotal_Text" xml:space="preserve">
+    <value>Celkem: {0}</value>
+  </data>
   <data name="Application_unsavedMessageBox_Caption" xml:space="preserve">
     <value>Uložit změny</value>
   </data>
