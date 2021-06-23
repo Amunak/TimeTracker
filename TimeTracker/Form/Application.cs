@@ -110,6 +110,7 @@ namespace TimeTracker.Form
             RefreshTrackingButtons();
             RefreshEditButtons();
             RefreshFileButtons();
+            RefreshStatistics();
             LoadSettings();
 
             BuildLanguageSelection();
@@ -228,6 +229,12 @@ namespace TimeTracker.Form
             this.saveAsToolStripMenuItem.Enabled = Data.Count > 0;
         }
 
+        private void RefreshStatistics()
+        {
+            var total = Data.Sum(row => row.GetTimeElapsed());
+            this.statsTotalText.Text = String.Format(Properties.Resources.Application_statsTotal_Text, total.Format());
+        }
+
         /// <summary>
         /// Called on data list change
         /// </summary>
@@ -238,6 +245,7 @@ namespace TimeTracker.Form
             isSaved = false;
             RefreshFileButtons();
             RefreshTitle();
+            RefreshStatistics();
         }
 
 

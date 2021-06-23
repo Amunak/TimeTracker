@@ -19,7 +19,7 @@ namespace TimeTracker.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -174,6 +174,15 @@ namespace TimeTracker.Properties {
         internal static string Application_nonexistentFileMessageBox_Message {
             get {
                 return ResourceManager.GetString("Application_nonexistentFileMessageBox_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total: {0}.
+        /// </summary>
+        internal static string Application_statsTotal_Text {
+            get {
+                return ResourceManager.GetString("Application_statsTotal_Text", resourceCulture);
             }
         }
         

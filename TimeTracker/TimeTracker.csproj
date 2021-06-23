@@ -86,9 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblySourceLinkAttribute.cs" />
+    <Compile Include="TimeSpanExtension.cs" />
     <Compile Include="DataSerializer.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="TimeSpanFormatter.cs" />
     <Compile Include="Form\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

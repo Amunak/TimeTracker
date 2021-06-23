@@ -26,5 +26,10 @@ namespace TimeTracker.Model
         /// Contains time elapsed as a user-friendly string
         /// </summary>
         String TimeElapsed { get; }
+
+        /// <summary>
+        /// Represents the difference between start time and end time
+        /// </summary>
+        TimeSpan GetTimeElapsed();
     }
 }

@@ -78,9 +78,9 @@ namespace TimeTracker
                     throw new TrackingServiceException("Tracking was not started.");
                 }
 
-                TimeSpan timeSpan = DateTimeOffset.Now.Subtract(this.StartTime);
+                System.TimeSpan timeSpan = DateTimeOffset.Now.Subtract(this.StartTime);
 
-                return TimeSpanFormatter.Format(timeSpan);
+                return timeSpan.Format();
             }
         }
     }

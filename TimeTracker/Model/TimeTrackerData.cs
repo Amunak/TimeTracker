@@ -30,13 +30,10 @@ namespace TimeTracker.Model
         {
             get
             {
-                return TimeSpanFormatter.Format(EndTime.Subtract(StartTime));
+                return this.GetTimeElapsed().Format();
             }
         }
-        
-        /// <summary>
-        /// 
-        /// </summary>
+
         /// <param name="endTime"></param>
         /// <param name="category"></param>
         public TimeTrackerData(DateTimeOffset endTime, TrackedDataCategory category = null)
@@ -46,9 +43,6 @@ namespace TimeTracker.Model
             Category = category;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="category"></param>
@@ -57,6 +51,15 @@ namespace TimeTracker.Model
             StartTime = startTime;
             EndTime = endTime;
             Category = category;
+        }
+
+        /// <summary>
+        /// Returns the time span between start and end date/time
+        /// <see cref="ITimeTrackerData.GetTimeElapsed"/>
+        /// </summary>
+        public TimeSpan GetTimeElapsed()
+        {
+            return EndTime.Subtract(StartTime);
         }
     }
 }
