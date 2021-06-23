@@ -187,16 +187,28 @@
     <value>384, 17</value>
   </metadata>
   <data name="statsTotalText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
+    <value>35, 19</value>
   </data>
   <data name="statsTotalText.Text" xml:space="preserve">
-    <value>total: 5h 9m</value>
+    <value>total</value>
+  </data>
+  <data name="statsSelectedText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 19</value>
+  </data>
+  <data name="statsSelectedText.Text" xml:space="preserve">
+    <value>selection</value>
+  </data>
+  <data name="statsCategoryText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 19</value>
+  </data>
+  <data name="statsCategoryText.Text" xml:space="preserve">
+    <value>category</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 376</value>
+    <value>0, 374</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>818, 22</value>
+    <value>818, 24</value>
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1774,6 +1786,18 @@
     <value>statsTotalText</value>
   </data>
   <data name="&gt;&gt;statsTotalText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statsSelectedText.Name" xml:space="preserve">
+    <value>statsSelectedText</value>
+  </data>
+  <data name="&gt;&gt;statsSelectedText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statsCategoryText.Name" xml:space="preserve">
+    <value>statsCategoryText</value>
+  </data>
+  <data name="&gt;&gt;statsCategoryText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem1.Name" xml:space="preserve">

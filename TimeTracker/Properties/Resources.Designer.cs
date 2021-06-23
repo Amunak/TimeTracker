@@ -178,6 +178,24 @@ namespace TimeTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category &quot;{0}&quot;: {1}.
+        /// </summary>
+        internal static string Application_statsCategory_Text {
+            get {
+                return ResourceManager.GetString("Application_statsCategory_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection ({0}): {1}.
+        /// </summary>
+        internal static string Application_statsSelected_Text {
+            get {
+                return ResourceManager.GetString("Application_statsSelected_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total: {0}.
         /// </summary>
         internal static string Application_statsTotal_Text {

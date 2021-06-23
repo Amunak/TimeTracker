@@ -1,14 +1,15 @@
 ﻿using System;
-using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Resources;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TimeTracker.Model;
 using TimeTracker.Properties;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using System.Linq;
-using System.Globalization;
-using System.Resources;
 
 namespace TimeTracker.Form
 {
@@ -121,7 +122,7 @@ namespace TimeTracker.Form
         /// </summary>
         private void BuildLanguageSelection()
         {
-            Dictionary<string,string> items = new Dictionary<string, string>(){
+            Dictionary<string, string> items = new Dictionary<string, string>(){
                 {"none", Resources.Application_language_default },
                 {"en",  "English" },
                 {"cs",  "Čeština" },
@@ -231,8 +232,43 @@ namespace TimeTracker.Form
 
         private void RefreshStatistics()
         {
-            var total = Data.Sum(row => row.GetTimeElapsed());
-            this.statsTotalText.Text = String.Format(Properties.Resources.Application_statsTotal_Text, total.Format());
+            TimeSpan statTotal = Data.Sum(value => value.GetTimeElapsed());
+            this.statsTotalText.Text = String.Format(Properties.Resources.Application_statsTotal_Text, statTotal.Format());
+
+            DataGridView grid = this.dataGridViewMain;
+
+            if (grid.SelectedRows.Count > 1)
+            {
+                var selectionEnumerator = grid.SelectedRows.GetEnumerator();
+                TimeSpan statSelection = new TimeSpan();
+                while (selectionEnumerator.MoveNext())
+                {
+                    var row = (DataGridViewRow)selectionEnumerator.Current;
+                    var data = (TimeTrackerData)row.DataBoundItem;
+                    statSelection = statSelection.Add(data.GetTimeElapsed());
+                }
+
+                this.statsSelectedText.Text = String.Format(Properties.Resources.Application_statsSelected_Text, grid.SelectedRows.Count, statSelection.Format());
+                this.statsSelectedText.Visible = true;
+            }
+            else
+            {
+                this.statsSelectedText.Visible = false;
+            }
+
+            if (grid.SelectedRows.Count == 1)
+            {
+                var selected = (TimeTrackerData)grid.SelectedRows[0].DataBoundItem;
+                var category = selected.Category;
+                TimeSpan statCategory = Data.Where(value => category == null ? value.Category == null : value.Category != null && value.Category.Equals(category)).Sum(value => value.GetTimeElapsed());
+
+                this.statsCategoryText.Text = String.Format(Properties.Resources.Application_statsCategory_Text, category == null ? "" : category.Name, statCategory.Format());
+                this.statsCategoryText.Visible = true;
+            }
+            else
+            {
+                this.statsCategoryText.Visible = false;
+            }
         }
 
         /// <summary>
@@ -274,6 +310,7 @@ namespace TimeTracker.Form
         private void dataGridViewMain_SelectionChanged(object sender, EventArgs e)
         {
             RefreshEditButtons();
+            RefreshStatistics();
         }
 
         /// <summary>

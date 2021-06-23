@@ -42,6 +42,8 @@
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statsTotalText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statsSelectedText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statsCategoryText = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,14 +183,29 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statsTotalText});
+            this.statsTotalText,
+            this.statsSelectedText,
+            this.statsCategoryText});
             resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // statsTotalText
             // 
+            this.statsTotalText.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.statsTotalText.Name = "statsTotalText";
             resources.ApplyResources(this.statsTotalText, "statsTotalText");
+            // 
+            // statsSelectedText
+            // 
+            this.statsSelectedText.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.statsSelectedText.Name = "statsSelectedText";
+            resources.ApplyResources(this.statsSelectedText, "statsSelectedText");
+            // 
+            // statsCategoryText
+            // 
+            this.statsCategoryText.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.statsCategoryText.Name = "statsCategoryText";
+            resources.ApplyResources(this.statsCategoryText, "statsCategoryText");
             // 
             // mainMenuStrip
             // 
@@ -500,6 +517,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statsTotalText;
+        private System.Windows.Forms.ToolStripStatusLabel statsSelectedText;
+        private System.Windows.Forms.ToolStripStatusLabel statsCategoryText;
     }
 }
 

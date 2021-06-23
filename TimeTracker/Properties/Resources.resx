@@ -156,6 +156,12 @@
   <data name="Application_nonexistentFileMessageBox_Message" xml:space="preserve">
     <value>Could not load specified file because it does not exist.</value>
   </data>
+  <data name="Application_statsCategory_Text" xml:space="preserve">
+    <value>Category "{0}": {1}</value>
+  </data>
+  <data name="Application_statsSelected_Text" xml:space="preserve">
+    <value>Selection ({0}): {1}</value>
+  </data>
   <data name="Application_statsTotal_Text" xml:space="preserve">
     <value>Total: {0}</value>
   </data>
