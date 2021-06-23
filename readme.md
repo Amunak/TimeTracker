@@ -12,6 +12,7 @@ released publicly as open-source software under MIT license.
 * Time tracking
 * Visual display of currently tracked time
 * Set tracking categories (or pick a category that's already in the table)
+* Observe immediate totals (statistics for all rows / selection / selected category)
 * Delete inconvenient entries
 * Open / Save time tracker table files (which use CSV-like format that is easy to process further)
 * Generic window manager options (stay on top, show in notification area, ...)
